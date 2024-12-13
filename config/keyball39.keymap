@@ -149,7 +149,7 @@
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &kp C_RESET
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &sys_reset
             >;
 
             label = "reset";
