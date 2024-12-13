@@ -54,8 +54,10 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-unless-interrupted";
+            flavor = "balanced";
             hold-trigger-key-positions = <5 6 7 8 15 16 17 18 25 26 27 28 29 19 9 36 37>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <150>;
         };
 
         right_hmr_tap: right_hmr_tap {
