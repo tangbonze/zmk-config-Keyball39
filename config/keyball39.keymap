@@ -101,10 +101,10 @@
         nav {
             label = "NAV";
             bindings = <
-&none   &none   &none   &none   &none                   &kp K_REDO  &kp K_PASTE     &kp K_COPY    &kp K_CUT       &kp K_UNDO
-&none   &none   &none   &none   &none                   &kp CAPS    &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT
-&none   &none   &none   &none   &none                   &kp INSERT  &kp HOME        &kp PG_UP     &kp PAGE_DOWN   &kp END
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans
+&none   &none   &none   &none   &none                   &kp LG(LS(Z))  &kp LG(V)       &kp LG(C)     &kp LG(X)       &kp LG(K_UNDO)
+&none   &none   &none   &none   &none                   &kp CAPS       &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT
+&none   &none   &none   &none   &none                   &kp INSERT     &kp HOME        &kp PG_UP     &kp PAGE_DOWN   &kp END
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                       &trans
             >;
         };
 
@@ -133,7 +133,7 @@
             bindings = <
 &trans  &trans     &trans    &trans    &trans                    &kp F1   &kp F2  &kp F3  &kp F11  &kp F12
 &trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT                 &kp F4   &kp F5  &kp F6  &trans   &trans
-&trans  &trans     &trans    &trans    &trans                    &kp F7   &kp F8  &kp F9  &trans   &trans
+&trans  &trans     &trans    &trans    &trans                    &kp F7   &kp F8  &kp F9  &trans   &kp PRINTSCREEN
 &trans  &trans     &trans    &trans    &trans     &mo 8  &trans  &kp F10                           &trans
             >;
         };
