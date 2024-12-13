@@ -38,7 +38,7 @@ layers:
   - {t: 'Alt+ $$mdi:keyboard-tab$$', h: SCROLL}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:backspace$$', h: SYM}
-  - Alt+ $$mdi:keyboard-tab$$
+  - Gui+ $$mdi:keyboard-tab$$
   NAV:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
