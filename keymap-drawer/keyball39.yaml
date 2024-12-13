@@ -35,7 +35,7 @@ layers:
   - NAV
   - {t: '$$mdi:keyboard-esc$$', h: SNIPE}
   - {t: '$$mdi:keyboard-return$$', h: MOUSE}
-  - {t: 'Alt+ $$mdi:keyboard-tab$$', h: SCROLL}
+  - {t: '$$mdi:keyboard-tab$$', h: SCROLL}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:backspace$$', h: SYM}
   - {t: '$$mdi:keyboard-return$$', type: enter}
