@@ -318,4 +318,4 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - RESET
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
