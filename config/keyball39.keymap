@@ -8,7 +8,6 @@
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
@@ -64,51 +63,75 @@
         default_layer {
             label = "QWRT";
             bindings = <
-&kp Q      &kp W         &kp E             &kp R         &kp T                                    &kp Y            &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S         &kp D             &kp F         &kp G                                    &kp H            &kp J  &kp K      &kp L    &kp SEMI
-&kp Z      &kp X         &kp C             &kp V         &kp B                                    &kp N            &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 6 ESCAPE  &lt 4 SPACE  &lt 5 LA(GRAVE)  &kp ENTER  &lt 2 BACKSPACE                             &kp RSHFT
+&kp Q  &kp W               &kp E           &kp R               &kp T                                  &kp Y            &kp U                &kp I            &kp O                &kp P
+&kp A  &mt S LEFT_CONTROL  &mt D LEFT_ALT  &mt F LEFT_COMMAND  &kp G                                  &kp H            &mt J RIGHT_COMMAND  &mt K RIGHT_ALT  &mt L RIGHT_CONTROL  &kp SEMICOLON
+&kp Z  &kp X               &kp C           &kp V               &kp B                                  &kp N            &kp M                &kp COMMA        &kp DOT              &kp SLASH
+&mo 4  &mo 3               &mo 1           &lt 6 ESCAPE        &lt 2 ENTER  &lt 7 LA(TAB)  &kp SPACE  &lt 5 BACKSPACE                                                             &lt 1 RIGHT_SHIFT
             >;
+        };
+
+        nav {
+            label = "NUM";
+            bindings = <
+&none   &none   &none   &none   &none                   &kp K_REDO  &kp K_PASTE     &kp K_COPY    &kp K_CUT       &kp K_UNDO
+&none   &none   &none   &none   &none                   &kp CAPS    &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT
+&none   &none   &none   &none   &none                   &kp INSERT  &kp HOME        &kp PG_UP     &kp PAGE_DOWN   &kp END
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                    &trans
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                  &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
+&trans  &trans  &trans  &trans  &trans                  &trans      &mkp LCLK    &trans      &mkp RCLK  &mkp MCLK
+&trans  &trans  &trans  &trans  &trans                  &trans      &trans       &trans      &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                          &trans
+            >;
+
+            label = "MOUSE";
         };
 
         number_layer {
-            label = "NUM";
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-&kp LEFT      &kp DOWN      &kp UP_ARROW  &kp RIGHT     &none                         &none         &none         &none         &none         &none
-&none         &none         &none         &none         &none                         &none         &none         &trans        &trans        &none
-&trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans                                                  &trans
+&trans  &trans     &trans    &trans    &trans                     &kp N1  &kp N2  &kp N3  &kp MINUS  &kp EQUAL
+&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT                  &kp N4  &kp N5  &kp N6  &kp GRAVE  &kp BSLH
+&trans  &trans     &trans    &trans    &trans                     &kp N7  &kp N8  &kp N9  &kp FSLH   &trans
+&trans  &trans     &trans    &trans    &trans     &trans  &trans  &kp N0                             &trans
             >;
-        };
 
-        symbol_layer {
-            label = "SYM";
-            bindings = <
-&kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT                  &kp CARET       &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&bt BT_CLR       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans                       &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp SQT
-&trans           &trans        &trans        &trans        &trans                       &kp UNDERSCORE  &kp PLUS       &trans            &trans                &kp NON_US_BACKSLASH
-&trans           &trans        &trans        &trans        &trans       &trans  &trans  &trans                                                                 &trans
-            >;
+            label = "NUM";
         };
 
         function_layer {
             label = "FUN";
             bindings = <
-&kp F1  &kp F2   &kp F3   &kp F4   &none                   &none   &none  &none  &none  &none
-&kp F5  &kp F6   &kp F7   &kp F8   &none                   &none   &none  &none  &none  &none
-&kp F9  &kp F10  &kp F11  &kp F12  &none                   &none   &none  &none  &none  &none
-&trans  &trans   &trans   &trans   &trans  &trans  &trans  &trans                       &sys_reset
+&trans  &trans     &trans    &trans    &trans                    &kp F1   &kp F2  &kp F3  &kp F11  &kp F12
+&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT                 &kp F4   &kp F5  &kp F6  &trans   &trans
+&trans  &trans     &trans    &trans    &trans                    &kp F7   &kp F8  &kp F9  &trans   &trans
+&trans  &trans     &trans    &trans    &trans     &mo 8  &trans  &kp F10                           &trans
             >;
         };
 
-        mouse_layer {
-            label = "MOUSE";
+        sym_layer {
             bindings = <
-&kp N1          &kp N2          &kp N3        &kp N4     &kp N5                  &kp N6         &kp N7     &kp N8  &kp N9     &kp N0
-&kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none                   &kp PAGE_UP    &mkp LCLK  &none   &mkp RCLK  &mkp MCLK
-&none           &none           &none         &none      &none                   &kp PAGE_DOWN  &none      &none   &none      &none
-&none           &trans          &trans        &trans     &trans  &trans  &trans  &mo 3                                        &none
+&trans  &trans  &trans  &trans  &trans                  &kp EXCLAMATION    &kp AT_SIGN        &kp HASH         &kp DOLLAR         &trans
+&trans  &trans  &trans  &trans  &trans                  &kp DOUBLE_QUOTES  &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp LEFT_BRACKET   &trans
+&trans  &trans  &trans  &trans  &trans                  &kp SQT            &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                    &trans
             >;
+
+            label = "SYM";
+        };
+
+        snipe_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans
+            >;
+
+            label = "SNIPE";
         };
 
         scroll_layer {
@@ -121,14 +144,15 @@
             >;
         };
 
-        snipe_layer {
-            label = "SNIPE";
+        reset {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &kp C_RESET
             >;
+
+            label = "reset";
         };
     };
 };
