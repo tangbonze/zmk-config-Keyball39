@@ -1,5 +1,5 @@
 layers:
-  default:
+  QWRT:
   - Q
   - W
   - E
@@ -31,15 +31,15 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - $$mdi:apple-keyboard-control$$
-  - LEFT WIN
   - $$mdi:apple-keyboard-option$$
-  - {t: '$$mdi:keyboard-esc$$', h: snipe}
-  - {t: '$$mdi:keyboard-space$$', h: mouse}
-  - {t: Alt+ `, h: scroll, s: Alt+ ~}
+  - $$mdi:apple-keyboard-command$$
+  - {t: '$$mdi:keyboard-esc$$', h: SNIPE}
+  - {t: '$$mdi:keyboard-space$$', h: MOUSE}
+  - {t: Alt+ `, h: SCROLL, s: Alt+ ~}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:backspace$$', h: symbol}
+  - {t: '$$mdi:backspace$$', h: SYM}
   - $$mdi:apple-keyboard-shift$$
-  number:
+  NUM:
   - '1'
   - '2'
   - '3'
@@ -79,7 +79,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  symbol:
+  SYM:
   - '!'
   - '@'
   - '#'
@@ -119,7 +119,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  function:
+  FUN:
   - F1
   - F2
   - F3
@@ -159,7 +159,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  mouse:
+  MOUSE:
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
@@ -197,9 +197,9 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - function
+  - FUN
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  scroll:
+  SCROLL:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -239,7 +239,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  snipe:
+  SNIPE:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
