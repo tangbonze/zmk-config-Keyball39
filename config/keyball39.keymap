@@ -91,10 +91,10 @@
         default_layer {
             label = "QWRT";
             bindings = <
-&kp Q  &kp W                         &kp E                     &kp R                         &kp T                                                 &kp Y                         &kp U                           &kp I                       &kp O                           &kp P
-&kp A  &left_hmr_tap S LEFT_CONTROL  &left_hmr_tap D LEFT_ALT  &left_hmr_tap F LEFT_COMMAND  &left_hmr_tap LEFT_SHIFT G                            &right_hmr_tap RIGHT_SHIFT H  &right_hmr_tap J RIGHT_COMMAND  &right_hmr_tap K RIGHT_ALT  &right_hmr_tap L RIGHT_CONTROL  &kp SEMICOLON
-&kp Z  &kp X                         &kp C                     &kp V                         &kp B                                                 &kp N                         &kp M                           &kp COMMA                   &kp DOT                         &kp SLASH
-&mo 4  &mo 3                         &mo 1                     &lt 6 ESCAPE                  &lt 2 ENTER                 &lt 7 LA(TAB)  &kp SPACE  &lt 5 BACKSPACE                                                                                                           &kp LA(TAB)
+&kp Q  &kp W                  &kp E                     &kp R                     &kp T                                                 &kp Y                         &kp U                           &kp I                       &kp O                   &kp P
+&kp A  &left_hmr_tap LCTRL S  &left_hmr_tap LEFT_ALT D  &left_hmr_tap LEFT_GUI F  &left_hmr_tap LEFT_SHIFT G                            &right_hmr_tap RIGHT_SHIFT H  &right_hmr_tap RIGHT_COMMAND J  &right_hmr_tap RIGHT_ALT K  &right_hmr_tap RCTRL L  &kp SEMICOLON
+&kp Z  &kp X                  &kp C                     &kp V                     &kp B                                                 &kp N                         &kp M                           &kp COMMA                   &kp DOT                 &kp SLASH
+&mo 4  &mo 3                  &mo 1                     &lt 6 ESCAPE              &lt 2 ENTER                 &lt 7 LA(TAB)  &kp SPACE  &lt 5 BACKSPACE                                                                                                   &kp LA(TAB)
             >;
         };
 
