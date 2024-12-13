@@ -46,6 +46,28 @@
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        left_hmr_tap: left_hmr_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_HMR_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-unless-interrupted";
+            hold-trigger-key-positions = <5 6 7 8 15 16 17 18 25 26 27 28 29 19 9 36 37>;
+        };
+
+        right_hmr_tap: right_hmr_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_HMR_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-unless-interrupted";
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 33 34 35>;
+        };
     };
 
     macros {
@@ -63,15 +85,15 @@
         default_layer {
             label = "QWRT";
             bindings = <
-&kp Q  &kp W               &kp E           &kp R               &kp T                                  &kp Y            &kp U                &kp I            &kp O                &kp P
-&kp A  &mt S LEFT_CONTROL  &mt D LEFT_ALT  &mt F LEFT_COMMAND  &kp G                                  &kp H            &mt J RIGHT_COMMAND  &mt K RIGHT_ALT  &mt L RIGHT_CONTROL  &kp SEMICOLON
-&kp Z  &kp X               &kp C           &kp V               &kp B                                  &kp N            &kp M                &kp COMMA        &kp DOT              &kp SLASH
-&mo 4  &mo 3               &mo 1           &lt 6 ESCAPE        &lt 2 ENTER  &lt 7 LA(TAB)  &kp SPACE  &lt 5 BACKSPACE                                                             &lt 1 RIGHT_SHIFT
+&kp Q  &kp W                         &kp E                     &kp R                         &kp T                                                 &kp Y                         &kp U                           &kp I                       &kp O                           &kp P
+&kp A  &left_hmr_tap S LEFT_CONTROL  &left_hmr_tap D LEFT_ALT  &left_hmr_tap F LEFT_COMMAND  &left_hmr_tap LEFT_SHIFT G                            &right_hmr_tap RIGHT_SHIFT H  &right_hmr_tap J RIGHT_COMMAND  &right_hmr_tap K RIGHT_ALT  &right_hmr_tap L RIGHT_CONTROL  &kp SEMICOLON
+&kp Z  &kp X                         &kp C                     &kp V                         &kp B                                                 &kp N                         &kp M                           &kp COMMA                   &kp DOT                         &kp SLASH
+&mo 4  &mo 3                         &mo 1                     &lt 6 ESCAPE                  &lt 2 ENTER                 &lt 7 LA(TAB)  &kp SPACE  &lt 5 BACKSPACE                                                                                                           &kp LA(TAB)
             >;
         };
 
         nav {
-            label = "NUM";
+            label = "NAV";
             bindings = <
 &none   &none   &none   &none   &none                   &kp K_REDO  &kp K_PASTE     &kp K_COPY    &kp K_CUT       &kp K_UNDO
 &none   &none   &none   &none   &none                   &kp CAPS    &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT
@@ -81,25 +103,23 @@
         };
 
         mouse_layer {
+            label = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans                  &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO
-&trans  &trans  &trans  &trans  &trans                  &trans      &mkp LCLK    &trans      &mkp RCLK  &mkp MCLK
-&trans  &trans  &trans  &trans  &trans                  &trans      &trans       &trans      &trans     &trans
+&trans  &trans  &trans  &trans  &trans                  &kp LG(LS(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
+&trans  &trans  &trans  &trans  &trans                  &trans         &mkp LCLK  &trans     &mkp RCLK  &mkp MCLK
+&trans  &trans  &trans  &trans  &trans                  &trans         &trans     &trans     &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                          &trans
             >;
-
-            label = "MOUSE";
         };
 
         number_layer {
+            label = "NUM";
             bindings = <
 &trans  &trans     &trans    &trans    &trans                     &kp N1  &kp N2  &kp N3  &kp MINUS  &kp EQUAL
 &trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT                  &kp N4  &kp N5  &kp N6  &kp GRAVE  &kp BSLH
 &trans  &trans     &trans    &trans    &trans                     &kp N7  &kp N8  &kp N9  &kp FSLH   &trans
 &trans  &trans     &trans    &trans    &trans     &trans  &trans  &kp N0                             &trans
             >;
-
-            label = "NUM";
         };
 
         function_layer {
@@ -113,25 +133,23 @@
         };
 
         sym_layer {
+            label = "SYM";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                  &kp EXCLAMATION    &kp AT_SIGN        &kp HASH         &kp DOLLAR         &trans
 &trans  &trans  &trans  &trans  &trans                  &kp DOUBLE_QUOTES  &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp LEFT_BRACKET   &trans
 &trans  &trans  &trans  &trans  &trans                  &kp SQT            &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                    &trans
             >;
-
-            label = "SYM";
         };
 
         snipe_layer {
+            label = "SNIPE";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans
             >;
-
-            label = "SNIPE";
         };
 
         scroll_layer {
@@ -145,14 +163,13 @@
         };
 
         reset {
+            label = "reset";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &bootloader
             >;
-
-            label = "reset";
         };
     };
 };
