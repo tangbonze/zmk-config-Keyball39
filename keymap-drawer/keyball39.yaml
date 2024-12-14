@@ -359,3 +359,6 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:progress-download$$
+combos:
+- p: [7, 8]
+  k: $$mdi:backspace-reverse-outline$$
