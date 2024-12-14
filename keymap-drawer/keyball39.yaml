@@ -19,7 +19,7 @@ layers:
   - {t: J, h: '$$mdi:apple-keyboard-command$$'}
   - {t: K, h: '$$mdi:apple-keyboard-option$$'}
   - {t: L, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: ;, s: ':'}
+  - {t: '''', s: '"'}
   - Z
   - X
   - C
@@ -27,11 +27,11 @@ layers:
   - B
   - N
   - M
-  - {t: ',', s: <}
-  - {t: ., s: '>'}
+  - {t: ',', s: ;}
+  - {t: ., s: ':'}
   - {t: /, s: '?'}
   - {t: '`', s: '~'}
-  - {t: '''', s: '"'}
+  - $$mdi:backspace-reverse-outline$$
   - {t: _, h: FUN}
   - {t: '$$mdi:keyboard-esc$$', h: NAV}
   - {t: '$$mdi:keyboard-return$$', h: MOUSE}
