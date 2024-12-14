@@ -75,6 +75,19 @@
             require-prior-idle-ms = <175>;
             hold-trigger-on-release;
         };
+
+        sym_modifier_hold: sym_modifier_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SYM_MODIFIER_HOLD";
+            bindings = <&lt>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <22 23 32 33 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33 34 35>;
+        };
     };
 
     macros {
@@ -92,10 +105,10 @@
         default_layer {
             label = "QWRT";
             bindings = <
-&kp Q      &kp W                  &kp E                     &kp R                     &kp T                                               &kp Y                         &kp U                           &kp I                       &kp O                   &kp P
-&kp A      &left_hmr_tap LCTRL S  &left_hmr_tap LEFT_ALT D  &left_hmr_tap LEFT_GUI F  &left_hmr_tap LEFT_SHIFT G                          &right_hmr_tap RIGHT_SHIFT H  &right_hmr_tap RIGHT_COMMAND J  &right_hmr_tap RIGHT_ALT K  &right_hmr_tap RCTRL L  &kp SEMICOLON
-&kp Z      &kp X                  &kp C                     &kp V                     &kp B                                               &kp N                         &kp M                           &kp COMMA                   &kp DOT                 &kp SLASH
-&kp GRAVE  &kp DELETE             &lt 4 UNDERSCORE          &lt 1 ESCAPE              &lt 2 ENTER                 &lt 7 TAB  &lt 3 SPACE  &lt 5 BACKSPACE                                                                                                   &kp BACKSLASH
+&kp Q      &kp W                  &kp E                     &kp R                     &kp T                                               &kp Y                           &kp U                           &kp I                       &kp O                   &kp P
+&kp A      &left_hmr_tap LCTRL S  &left_hmr_tap LEFT_ALT D  &left_hmr_tap LEFT_GUI F  &left_hmr_tap LEFT_SHIFT G                          &right_hmr_tap RIGHT_SHIFT H    &right_hmr_tap RIGHT_COMMAND J  &right_hmr_tap RIGHT_ALT K  &right_hmr_tap RCTRL L  &kp SEMICOLON
+&kp Z      &kp X                  &kp C                     &kp V                     &kp B                                               &kp N                           &kp M                           &kp COMMA                   &kp DOT                 &kp SLASH
+&kp GRAVE  &kp DELETE             &lt 4 UNDERSCORE          &lt 1 ESCAPE              &lt 2 ENTER                 &lt 7 TAB  &lt 3 SPACE  &sym_modifier_hold 5 BACKSPACE                                                                                      &kp BACKSLASH
             >;
         };
 
