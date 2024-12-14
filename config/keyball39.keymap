@@ -34,7 +34,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA_QUESTION";
             #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp QUESTION>;
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -43,7 +43,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_SEMI";
             #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp SEMI>;
+            bindings = <&kp DOT>, <&kp COLON>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -115,9 +115,9 @@
             label = "QWRT";
             bindings = <
 &kp Q      &kp W                  &kp E                     &kp R                     &kp T                                               &kp Y                           &kp U                           &kp I                       &kp O                   &kp P
-&kp A      &left_hmr_tap LCTRL S  &left_hmr_tap LEFT_ALT D  &left_hmr_tap LEFT_GUI F  &left_hmr_tap LEFT_SHIFT G                          &right_hmr_tap RIGHT_SHIFT H    &right_hmr_tap RIGHT_COMMAND J  &right_hmr_tap RIGHT_ALT K  &right_hmr_tap RCTRL L  &kp SEMICOLON
-&kp Z      &kp X                  &kp C                     &kp V                     &kp B                                               &kp N                           &kp M                           &kp COMMA                   &kp DOT                 &kp SLASH
-&kp GRAVE  &kp SQT                &lt 4 UNDERSCORE          &lt 1 ESCAPE              &lt 2 ENTER                 &lt 7 TAB  &lt 3 SPACE  &sym_modifier_hold 5 BACKSPACE                                                                                      &kp BACKSLASH
+&kp A      &left_hmr_tap LCTRL S  &left_hmr_tap LEFT_ALT D  &left_hmr_tap LEFT_GUI F  &left_hmr_tap LEFT_SHIFT G                          &right_hmr_tap RIGHT_SHIFT H    &right_hmr_tap RIGHT_COMMAND J  &right_hmr_tap RIGHT_ALT K  &right_hmr_tap RCTRL L  &kp SQT
+&kp Z      &kp X                  &kp C                     &kp V                     &kp B                                               &kp N                           &kp M                           &cmqus                      &dtsmi                  &kp SLASH
+&kp GRAVE  &kp DELETE             &lt 4 UNDERSCORE          &lt 1 ESCAPE              &lt 2 ENTER                 &lt 7 TAB  &lt 3 SPACE  &sym_modifier_hold 5 BACKSPACE                                                                                      &kp BACKSLASH
             >;
         };
 
