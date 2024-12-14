@@ -30,7 +30,7 @@ layers:
   - {t: ',', s: ;}
   - {t: ., s: ':'}
   - {t: /, s: '?'}
-  - NAV
+  - {t: '`', h: NAV, s: '~'}
   - $$mdi:backspace-reverse-outline$$
   - {t: _, h: FUN}
   - {t: '$$mdi:keyboard-esc$$', h: NAV}
