@@ -136,7 +136,7 @@
             bindings = <
 &trans     &trans  &trans  &trans  &trans                  &kp LG(LS(Z))  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
 &trans     &trans  &trans  &trans  &trans                  &trans         &mkp LCLK  &trans     &mkp RCLK  &mkp MCLK
-&trans     &trans  &trans  &trans  &trans                  &trans         &trans     &trans     &trans     &trans
+&kp SPACE  &trans  &trans  &trans  &trans                  &trans         &trans     &trans     &trans     &trans
 &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                          &trans
             >;
         };
