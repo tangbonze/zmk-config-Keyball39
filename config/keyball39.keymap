@@ -99,6 +99,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <7 8>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
