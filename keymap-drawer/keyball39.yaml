@@ -210,9 +210,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '''', s: '"'}
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
+  - {t: '`', s: '~'}
+  - (
+  - )
   - '{'
   - '}'
   - $$mdi:apple-keyboard-shift$$
@@ -220,9 +220,9 @@ layers:
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - '"'
-  - (
-  - )
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '[', s: '{'}
+  - {t: ']', s: '}'}
   - ^
   - '&'
   - {t: '$$mdi:transfer$$', type: trans}
@@ -230,7 +230,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '`', s: '~'}
+  - {t: '$$mdi:transfer$$', type: trans}
   - <
   - '>'
   - '*'
