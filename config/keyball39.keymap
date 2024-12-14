@@ -95,7 +95,7 @@
 &kp Q      &kp W                  &kp E                     &kp R                     &kp T                                               &kp Y                         &kp U                           &kp I                       &kp O                   &kp P
 &kp A      &left_hmr_tap LCTRL S  &left_hmr_tap LEFT_ALT D  &left_hmr_tap LEFT_GUI F  &left_hmr_tap LEFT_SHIFT G                          &right_hmr_tap RIGHT_SHIFT H  &right_hmr_tap RIGHT_COMMAND J  &right_hmr_tap RIGHT_ALT K  &right_hmr_tap RCTRL L  &kp SEMICOLON
 &kp Z      &kp X                  &kp C                     &kp V                     &kp B                                               &kp N                         &kp M                           &kp COMMA                   &kp DOT                 &kp SLASH
-&kp GRAVE  &tog 3                 &lt 4 UNDERSCORE          &lt 1 ESCAPE              &lt 2 ENTER                 &lt 7 TAB  &lt 3 SPACE  &lt 5 BACKSPACE                                                                                                   &kp ENTER
+&kp GRAVE  &kp DELETE             &lt 4 UNDERSCORE          &lt 1 ESCAPE              &lt 2 ENTER                 &lt 7 TAB  &lt 3 SPACE  &lt 5 BACKSPACE                                                                                                   &kp BACKSLASH
             >;
         };
 
@@ -134,7 +134,7 @@
             label = "FUN";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                 &kp F1   &kp F2  &kp F3  &kp F11  &kp F12
-&trans      &kp LCTRL     &kp LALT      &kp LGUI      &kp LSHFT                    &kp F4   &kp F5  &kp F6  &trans   &trans
+&trans      &kp LCTRL     &kp LALT      &kp LGUI      &kp LSHFT                    &kp F4   &kp F5  &kp F6  &trans   &kp CAPSLOCK
 &trans      &trans        &trans        &trans        &trans                       &kp F7   &kp F8  &kp F9  &trans   &kp PRINTSCREEN
 &trans      &trans        &trans        &trans        &trans        &mo 8  &trans  &kp F10                           &trans
             >;
@@ -142,10 +142,10 @@
 
         sym_layer {
             bindings = <
-&kp EXCLAMATION    &kp AT_SIGN           &kp HASH               &kp DOLLAR      &kp PERCENT                             &trans     &trans    &trans    &trans     &trans
-&kp SQT            &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LEFT_BRACE  &kp RIGHT_BRACE                         &kp RSHFT  &kp RGUI  &kp RALT  &kp RCTRL  &trans
-&kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET       &kp AMPERSAND                           &trans     &trans    &trans    &trans     &trans
-&kp PERIOD         &kp LESS_THAN         &kp GREATER_THAN       &kp ASTERISK    &kp SLASH        &kp BACKSLASH  &trans  &trans                                    &trans
+&kp EXCLAMATION    &kp AT_SIGN           &kp HASH               &kp DOLLAR      &kp PERCENT                         &trans     &trans    &trans    &trans     &trans
+&kp SQT            &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LEFT_BRACE  &kp RIGHT_BRACE                     &kp RSHFT  &kp RGUI  &kp RALT  &kp RCTRL  &trans
+&kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET       &kp AMPERSAND                       &trans     &trans    &trans    &trans     &trans
+&kp GRAVE          &kp LESS_THAN         &kp GREATER_THAN       &kp ASTERISK    &kp MINUS        &kp EQUAL  &trans  &trans                                    &trans
             >;
 
             label = "SYM";
