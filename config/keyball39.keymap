@@ -79,7 +79,7 @@
         sym_modifier_hold: sym_modifier_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "SYM_MODIFIER_HOLD";
-            bindings = <&lt>, <&kp>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
