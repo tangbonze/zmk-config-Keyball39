@@ -143,8 +143,8 @@
         sym_layer {
             bindings = <
 &kp EXCLAMATION    &kp AT_SIGN           &kp HASH               &kp DOLLAR      &kp PERCENT                             &trans     &trans    &trans    &trans     &trans
-&kp DOUBLE_QUOTES  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LEFT_BRACE  &kp RIGHT_BRACE                         &kp RSHFT  &kp RGUI  &kp RALT  &kp RCTRL  &trans
-&kp SQT            &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET       &kp AMPERSAND                           &trans     &trans    &trans    &trans     &trans
+&kp SQT            &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LEFT_BRACE  &kp RIGHT_BRACE                         &kp RSHFT  &kp RGUI  &kp RALT  &kp RCTRL  &trans
+&kp DOUBLE_QUOTES  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET       &kp AMPERSAND                           &trans     &trans    &trans    &trans     &trans
 &kp PERIOD         &kp LESS_THAN         &kp GREATER_THAN       &kp ASTERISK    &kp SLASH        &kp BACKSLASH  &trans  &trans                                    &trans
             >;
 
