@@ -124,7 +124,7 @@
         nav {
             label = "NAV";
             bindings = <
-&none   &none      &none     &none     &none                      &kp LG(LS(Z))  &kp LG(V)       &kp LG(C)       &kp LG(X)      &kp LG(Z)
+&none   &none      &none     &none     &none                      &kp LG(LS(Z))  &kp LG(C)       &kp LG(V)       &kp LG(X)      &kp LG(Z)
 &none   &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT                  &caps_word     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT
 &none   &none      &none     &none     &none                      &kp INSERT     &kp HOME        &kp PG_UP       &kp PAGE_DOWN  &kp END
 &trans  &trans     &trans    &trans    &trans     &trans  &trans  &trans                                                        &trans
