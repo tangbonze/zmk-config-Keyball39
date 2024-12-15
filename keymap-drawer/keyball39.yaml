@@ -160,7 +160,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   FUN:
-  - $$mdi:bluetooth-off$$
+  - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
@@ -170,7 +170,7 @@ layers:
   - F3
   - F11
   - F12
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:bluetooth-off$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - LGUI
