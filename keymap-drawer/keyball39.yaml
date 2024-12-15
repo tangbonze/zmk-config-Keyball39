@@ -191,10 +191,10 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - PRINTSCREEN
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - GLOBE
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  - GLOBE
+  - {t: '$$mdi:transfer$$', type: trans}
   - reset
   - {t: '$$mdi:transfer$$', type: trans}
   - F10
