@@ -117,7 +117,7 @@
 &kp Q        &kp W                  &kp E                     &kp R                     &kp T                                               &kp Y                           &kp U                           &kp I                       &kp O                   &kp P
 &kp A        &left_hmr_tap LCTRL S  &left_hmr_tap LEFT_ALT D  &left_hmr_tap LEFT_GUI F  &left_hmr_tap LEFT_SHIFT G                          &right_hmr_tap RIGHT_SHIFT H    &right_hmr_tap RIGHT_COMMAND J  &right_hmr_tap RIGHT_ALT K  &right_hmr_tap RCTRL L  &kp SQT
 &kp Z        &kp X                  &kp C                     &kp V                     &kp B                                               &kp N                           &kp M                           &cmqus                      &dtsmi                  &kp SLASH
-&lt 1 GRAVE  &kp DELETE             &lt 4 UNDERSCORE          &lt 1 ESCAPE              &lt 2 ENTER                 &lt 7 TAB  &lt 3 SPACE  &sym_modifier_hold 5 BACKSPACE                                                                                      &kp BACKSLASH
+&lt 1 GRAVE  &kp DELETE             &lt 4 UNDERSCORE          &lt 6 ESCAPE              &lt 2 ENTER                 &lt 7 TAB  &lt 3 SPACE  &sym_modifier_hold 5 BACKSPACE                                                                                      &kp BACKSLASH
             >;
         };
 
@@ -144,10 +144,10 @@
         number_layer {
             label = "NUM";
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3      &kp N0                     &trans           &trans    &trans    &trans     &trans
-&trans     &kp N4  &kp N5  &kp N6      &kp MINUS                  &kp RIGHT_SHIFT  &kp RGUI  &kp RALT  &kp RCTRL  &trans
-&trans     &kp N7  &kp N8  &kp N9      &kp EQUAL                  &trans           &trans    &trans    &trans     &trans
-&trans     &trans  &kp N0  &kp PERIOD  &trans     &trans  &trans  &trans                                          &trans
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N0                     &trans           &trans    &trans    &trans     &trans
+&trans     &kp N4  &kp N5  &kp N6  &kp MINUS                  &kp RIGHT_SHIFT  &kp RGUI  &kp RALT  &kp RCTRL  &trans
+&trans     &kp N7  &kp N8  &kp N9  &kp EQUAL                  &trans           &trans    &trans    &trans     &trans
+&trans     &trans  &kp N0  &none   &kp N0     &trans  &trans  &trans                                          &trans
             >;
         };
 
@@ -157,7 +157,7 @@
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                 &kp F1   &kp F2  &kp F3  &kp F11  &kp F12
 &trans      &kp LCTRL     &kp LALT      &kp LGUI      &kp LSHFT                    &kp F4   &kp F5  &kp F6  &trans   &kp CAPSLOCK
 &trans      &trans        &trans        &trans        &trans                       &kp F7   &kp F8  &kp F9  &trans   &kp PRINTSCREEN
-&trans      &trans        &trans        &trans        &trans        &mo 8  &trans  &kp F10                           &trans
+&trans      &trans        &trans        &trans        &kp GLOBE     &mo 8  &trans  &kp F10                           &trans
             >;
         };
 
