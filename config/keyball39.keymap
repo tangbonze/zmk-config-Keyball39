@@ -134,7 +134,7 @@
         mouse_layer {
             label = "MOUSE";
             bindings = <
-&kp N1     &kp N2  &kp N3  &kp N4  &kp N5                  &kp N6     &kp N7     &kp N8  &kp N9     &kp N0
+&trans     &trans  &trans  &trans  &trans                  &trans     &trans     &trans  &trans     &trans
 &trans     &trans  &trans  &trans  &trans                  &kp MINUS  &mkp LCLK  &trans  &mkp RCLK  &mkp MCLK
 &kp SPACE  &trans  &trans  &trans  &trans                  &kp EQUAL  &trans     &trans  &trans     &trans
 &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                   &trans
@@ -144,10 +144,10 @@
         number_layer {
             label = "NUM";
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N0                     &trans           &trans    &trans    &trans     &trans
-&trans     &kp N4  &kp N5  &kp N6  &kp MINUS                  &kp RIGHT_SHIFT  &kp RGUI  &kp RALT  &kp RCTRL  &trans
-&trans     &kp N7  &kp N8  &kp N9  &kp EQUAL                  &trans           &trans    &trans    &trans     &trans
-&trans     &trans  &kp N0  &trans  &trans     &trans  &trans  &trans                                          &trans
+&kp GRAVE  &kp N1  &kp N2  &kp N3      &kp N0                     &trans           &trans    &trans    &trans     &trans
+&trans     &kp N4  &kp N5  &kp N6      &kp MINUS                  &kp RIGHT_SHIFT  &kp RGUI  &kp RALT  &kp RCTRL  &trans
+&trans     &kp N7  &kp N8  &kp N9      &kp EQUAL                  &trans           &trans    &trans    &trans     &trans
+&trans     &trans  &kp N0  &kp PERIOD  &trans     &trans  &trans  &trans                                          &trans
             >;
         };
 
