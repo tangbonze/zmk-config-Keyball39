@@ -45,7 +45,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - Gui+Sft+ Z
+  - Gui+Sft+Z
   - {t: C, h: '$$mdi:apple-keyboard-command$$'}
   - {t: V, h: '$$mdi:apple-keyboard-command$$'}
   - {t: X, h: '$$mdi:apple-keyboard-command$$'}
@@ -210,7 +210,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '`', s: '~'}
+  - ^
   - (
   - )
   - '{'
@@ -220,11 +220,11 @@ layers:
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&'
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
-  - ^
-  - '&'
+  - <
+  - '>'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -234,8 +234,8 @@ layers:
   - <
   - '>'
   - '*'
-  - {t: '-', s: _}
-  - {t: '=', s: +}
+  - _
+  - +
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
