@@ -362,3 +362,15 @@ layers:
 combos:
 - p: [7, 8]
   k: $$mdi:backspace-reverse-outline$$
+- p: [16, 17]
+  k: AltGr+$$mdi:arrow-left-bold$$
+  l: [NAV]
+- p: [17, 17, 18]
+  k: AltGr+$$mdi:arrow-right-bold$$
+  l: [NAV]
+- p: [18, 19]
+  k: Gui+$$mdi:arrow-right-bold$$
+  l: [NAV]
+- p: [15, 16]
+  k: Gui+$$mdi:arrow-left-bold$$
+  l: [NAV]
