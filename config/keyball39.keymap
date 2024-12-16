@@ -145,10 +145,10 @@
         number_layer {
             label = "NUM";
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N0                      &trans           &trans    &trans    &trans     &trans
-&trans     &kp N4  &kp N5  &kp N6  &kp MINUS                   &kp RIGHT_SHIFT  &kp RGUI  &kp RALT  &kp RCTRL  &trans
-&trans     &kp N7  &kp N8  &kp N9  &kp EQUAL                   &trans           &trans    &trans    &trans     &trans
-&trans     &trans  &kp N0  &none   &kp PERIOD  &trans  &trans  &trans                                          &trans
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N0                    &none            &none     &none     &none      &none
+&none      &kp N4  &kp N5  &kp N6  &kp MINUS                 &kp RIGHT_SHIFT  &kp RGUI  &kp RALT  &kp RCTRL  &none
+&none      &kp N7  &kp N8  &kp N9  &kp EQUAL                 &none            &none     &none     &none      &none
+&none      &none   &kp N0  &none   &kp PERIOD  &none  &none  &none                                           &none
             >;
         };
 
