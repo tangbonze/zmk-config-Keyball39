@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: inorichi
       url-base: https://github.com/inorichi
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -11,6 +13,9 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: inorichi
+      revision: main
+    - name: zmk-auto-layer
+      remote: urob
       revision: main
   self:
     path: config
