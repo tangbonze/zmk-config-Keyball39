@@ -11,51 +11,93 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/bt.h>
 
-&lt {
-    tapping-term-ms = <240>;
-    flavor = "balanced";
-    quick-tap-ms = <150>;
-};
+#define HYPER(key) LS(LC(LA(LG(key))))
+
 
 &mt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <185>;
     flavor = "tap-preferred";
-    quick-tap-ms = <150>;
+};
+
+&lt {
+    tapping-term-ms = <185>;
+    flavor = "tap-preferred";
 };
 
 &caps_word { continue-list = <UNDERSCORE MINUS>; };
 
 / {
-    // custom shift using mod-morph 
 
-    behaviors {
-        cmqus: comma_question {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COMMA_QUESTION";
+    macros {
+        zed_em_kay: zed_em_kay {
+            label = "ZM_zed_em_kay";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp QUESTION>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp K>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp O &kp R &kp A &kp N2 &kp N1 &kp N1 &kp N1 &kp N1 &kp N1 &kp N1 &kp N1 &kp RET>
+                , <&macro_tap &to 0>
+                ;
         };
 
-        dtsmi: dot_semi {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DOT_SEMI";
+        br_vim: br_vim {
+            wait-ms = <40>;
+            tap-ms = <40>;
+            label = "br_vim";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp SEMI>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings
+                = <&macro_tap &kp SPACE>
+                , <&macro_tap &kp R>
+                ;
         };
     };
 
-    macros {
-        Hiragana: Hiragana {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(SPACE)>;
-            label = "HIRAGANA";
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp TAB>;
         };
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp TAB>;
+        };
+    };
+
+    behaviors {
+            mthold: mt_hold_preffered {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                label = "MT HOLD";
+                tapping-term-ms = <185>;
+                flavor = "hold-preferred";
+                bindings = <&kp>, <&kp>;
+            };
+
+            lthold: lt_hold_preffered {
+                label = "LT HOLD";
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <2000>;
+                flavor = "hold-preferred";
+                bindings = <&mo>, <&kp>;
+            };
+            // Swapper for smart cmd+tab
+            swapper: swapper {
+                compatible = "zmk,behavior-smart-toggle";
+                #binding-cells = <0>;
+                bindings = <&kp LGUI>, <&kp TAB>;
+            };
     };
 
     keymap {
@@ -64,41 +106,60 @@
         default_layer {
             label = "QWRT";
             bindings = <
-&kp Q      &kp W         &kp E     &kp R         &kp T                                    &kp Y            &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S         &kp D     &kp F         &kp G                                    &kp H            &kp J  &kp K      &kp L    &kp SEMI
-&kp Z      &kp X         &kp C     &kp V         &kp B                                    &kp N            &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LALT  &lt 6 ESCAPE  &lt 4 SPACE  &lt 5 LA(GRAVE)  &kp ENTER  &lt 2 BACKSPACE                             &kp RSHFT
-            >;
-        };
-
-        number_layer {
-            label = "NUM";
-            bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-&kp LEFT      &kp DOWN      &kp UP_ARROW  &kp RIGHT     &none                         &none         &none         &none         &none         &none
-&none         &none         &none         &none         &none                         &none         &none         &trans        &trans        &none
-&trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans                                                  &trans
+&kp Q    &kp W  &kp E      &kp R        &kp T              &kp Y            &kp U        &kp I      &kp O    &kp P
+&kp A    &kp S  &kp D      &kp F        &kp G              &kp H            &kp J        &kp K      &kp L    &kp SEMI
+&lt 2 Z  &kp X  &kp C      &mt LGUI V   &kp B              &kp N            &mt LGUI M   &kp COMMA  &kp DOT  &mthold LCTRL FSLH
+&none &none &none &mo 5      &lt 4 SPACE  &mthold LSHFT ESC  &kp BSPC         &mo 1        &kp RALT
             >;
         };
 
         symbol_layer {
             label = "SYM";
             bindings = <
-&kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT                  &kp CARET       &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&bt BT_CLR       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans                       &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp SQT
-&trans           &trans        &trans        &trans        &trans                       &kp UNDERSCORE  &kp PLUS       &trans            &trans                &kp NON_US_BACKSLASH
-&trans           &trans        &trans        &trans        &trans       &trans  &trans  &trans                                                                 &trans
+&trans   &trans   &kp MINUS  &kp PLUS   &trans     &trans   &kp N7   &kp N8   &kp N9   &trans
+&trans   &trans   &kp N1     &kp N0     &trans     &trans   &kp N4   &kp N5   &kp N6   &kp RET
+&trans   &trans   &kp COMMA  &kp DOT    &kp EQUAL  &kp N0   &kp N1   &kp N2   &kp N3   &kp FSLH
+&none &none &none &trans     &kp MINUS  &kp PLUS   &kp BSPC   &trans     &kp LCTRL
             >;
         };
 
-        function_layer {
+        number_layer {
+            label = "NUM";
+            bindings = <
+&kp TILDE  &kp AT     &kp HASH   &kp DLLR   &kp PRCNT  &kp APOS   &kp LBKT   &kp RBKT   &kp CARET  &trans
+&kp COLON  &kp UNDER  &kp EXCL   &kp EQUAL  &kp GT     &kp AMPS   &kp LPAR   &kp RPAR   &kp PIPE   &kp RET
+&kp GRAVE  &kp DQT    &kp STAR   &kp MINUS  &trans     &kp BSLH   &kp LBRC   &kp RBRC   &kp APOS   &to 3
+&none &none &none &to 0      &kp LGUI   &trans     &trans   &trans   &trans
+            >;
+        };
+
+        sys_layer {
             label = "FUN";
             bindings = <
-&kp F1  &kp F2   &kp F3   &kp F4   &none                   &none   &none  &none  &none  &none
-&kp F5  &kp F6   &kp F7   &kp F8   &none                   &none   &none  &none  &none  &none
-&kp F9  &kp F10  &kp F11  &kp F12  &none                   &none   &none  &none  &none  &none
-&trans  &trans   &trans   &trans   &trans  &trans  &trans  &trans                       &trans
+&bootloader     &none &bt BT_CLR  &none  &none  &kp LG(LBKT)   &kp LC(LS(TAB))  &kp RC(TAB)  &kp LG(RBKT)   &kp RET
+&sys_reset      &none &bt BT_NXT  &none  &none  &kp LEFT       &kp DOWN         &kp UP       &kp RIGHT      &kp RET
+&zed_em_kay     &none &bt BT_PRV  &none  &none  &none          &none            &kp F13      &kp F15        &ext_power EP_OFF
+&none &none &none &to 0  &none  &none  &none          &kp LGUI         &none
             >;
+        };
+
+        nav_hold_layer {
+            label = "SCROLL";
+            bindings = <
+&kp TAB        &kp LG(LS(N4))   &none          &kp LC(SPACE)  &trans   &kp LA(LEFT)   &kp LC(LA(LG(U)))  &kp LC(LA(LG(I)))  &kp LA(RIGHT)  &trans
+&kp LG(A)      &br_vim          &kp LG(GRAVE)  &swapper       &trans   &kp LEFT       &kp DOWN           &kp UP             &kp RIGHT      &kp RET
+&kp LC(GRAVE)  &kp LC(N1)       &kp LG(C)      &kp LG(V)      &trans   &trans         &trans             &trans             &kp LA(DOT)    &trans
+&none &none &none &mo 5      &lt 4 SPACE  &mthold LSHFT ESC  &kp BSPC         &mo 1        &kp RALT
+            >;
+        };
+
+        hyper_layer {
+                        bindings = <
+&kp HYPER(Q)    &kp LC(W)     &kp HYPER(F)      &kp HYPER(P)        &kp HYPER(G)              &kp HYPER(Y)     &kp HYPER(U)        &kp HYPER(I)      &kp HYPER(O)    &kp HYPER(P)
+&kp HYPER(A)    &kp HYPER(R)  &kp HYPER(S)      &kp HYPER(T)        &kp HYPER(D)              &kp HYPER(H)     &kp HYPER(J)        &kp HYPER(K)      &kp HYPER(L)    &kp HYPER(RET)
+&kp HYPER(Z)    &kp HYPER(X)  &kp LC(C)         &kp HYPER(V)        &kp HYPER(B)              &kp HYPER(N)     &kp HYPER(M)        &kp HYPER(COMMA)  &kp LC(DOT)  &kp HYPER(FSLH)
+&none &none &none &mo 5      &lt 4 SPACE  &mthold LSHFT ESC  &kp BSPC         &mo 1        &kp RALT
+                         >;
         };
 
         mouse_layer {
@@ -107,7 +168,7 @@
 &kp N1          &kp N2          &kp N3        &kp N4     &kp N5                  &kp N6         &kp N7     &kp N8  &kp N9     &kp N0
 &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none                   &kp PAGE_UP    &mkp LCLK  &none   &mkp RCLK  &mkp MCLK
 &none           &none           &none         &none      &none                   &kp PAGE_DOWN  &none      &none   &none      &none
-&none           &trans          &trans        &trans     &trans  &trans  &trans  &mo 3                                        &none
+&none &none &none &mo 5      &lt 4 SPACE  &mthold LSHFT ESC  &kp BSPC         &mo 1        &kp RALT
             >;
         };
 
@@ -127,8 +188,9 @@
 &trans  &trans  &trans  &trans  &bootloader                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans                          &trans
+&none &none &none &mo 5      &lt 4 SPACE  &mthold LSHFT ESC  &kp BSPC         &mo 1        &kp RALT
             >;
         };
+
     };
 };
