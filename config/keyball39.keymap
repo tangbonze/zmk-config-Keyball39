@@ -33,7 +33,6 @@
 
     macros {
         zed_em_kay: zed_em_kay {
-            label = "ZM_zed_em_kay";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <40>;
@@ -50,7 +49,6 @@
         br_vim: br_vim {
             wait-ms = <40>;
             tap-ms = <40>;
-            label = "br_vim";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -78,14 +76,12 @@
             mthold: mt_hold_preffered {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
-                label = "MT HOLD";
                 tapping-term-ms = <185>;
                 flavor = "hold-preferred";
                 bindings = <&kp>, <&kp>;
             };
 
             lthold: lt_hold_preffered {
-                label = "LT HOLD";
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 tapping-term-ms = <2000>;
@@ -104,7 +100,6 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "QWRT";
             bindings = <
 &kp Q    &kp W  &kp E      &kp R        &kp T              &kp Y            &kp U        &kp I      &kp O    &kp P
 &kp A    &kp S  &kp D      &kp F        &kp G              &kp H            &kp J        &kp K      &kp L    &kp SEMI
@@ -114,7 +109,6 @@
         };
 
         symbol_layer {
-            label = "SYM";
             bindings = <
 &trans   &trans   &kp MINUS  &kp PLUS   &trans     &trans   &kp N7   &kp N8   &kp N9   &trans
 &trans   &trans   &kp N1     &kp N0     &trans     &trans   &kp N4   &kp N5   &kp N6   &kp RET
@@ -124,7 +118,6 @@
         };
 
         number_layer {
-            label = "NUM";
             bindings = <
 &kp TILDE  &kp AT     &kp HASH   &kp DLLR   &kp PRCNT  &kp APOS   &kp LBKT   &kp RBKT   &kp CARET  &trans
 &kp COLON  &kp UNDER  &kp EXCL   &kp EQUAL  &kp GT     &kp AMPS   &kp LPAR   &kp RPAR   &kp PIPE   &kp RET
@@ -134,7 +127,6 @@
         };
 
         sys_layer {
-            label = "FUN";
             bindings = <
 &bootloader     &none &bt BT_CLR  &none  &none  &kp LG(LBKT)   &kp LC(LS(TAB))  &kp RC(TAB)  &kp LG(RBKT)   &kp RET
 &sys_reset      &none &bt BT_NXT  &none  &none  &kp LEFT       &kp DOWN         &kp UP       &kp RIGHT      &kp RET
@@ -144,7 +136,6 @@
         };
 
         nav_hold_layer {
-            label = "SCROLL";
             bindings = <
 &kp TAB        &kp LG(LS(N4))   &none          &kp LC(SPACE)  &trans   &kp LA(LEFT)   &kp LC(LA(LG(U)))  &kp LC(LA(LG(I)))  &kp LA(RIGHT)  &trans
 &kp LG(A)      &br_vim          &kp LG(GRAVE)  &swapper       &trans   &kp LEFT       &kp DOWN           &kp UP             &kp RIGHT      &kp RET
@@ -163,7 +154,6 @@
         };
 
         mouse_layer {
-            label = "MOUSE";
             bindings = <
 &kp N1          &kp N2          &kp N3        &kp N4     &kp N5                  &kp N6         &kp N7     &kp N8  &kp N9     &kp N0
 &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none                   &kp PAGE_UP    &mkp LCLK  &none   &mkp RCLK  &mkp MCLK
@@ -173,7 +163,6 @@
         };
 
         scroll_layer {
-            label = "SCROLL";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
@@ -183,7 +172,6 @@
         };
 
         snipe_layer {
-            label = "SNIPE";
             bindings = <
 &trans  &trans  &trans  &trans  &bootloader                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans

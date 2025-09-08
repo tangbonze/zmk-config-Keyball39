@@ -14,5 +14,8 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: kumamuk-git
       revision: main
+    - name: zmk-smart-toggle
+      remote: caksoylar
+      revision: main
   self:
     path: config
