@@ -1,10 +1,12 @@
 #define DEFAULT 0
-#define NUM     1
-#define SYM     2
-#define FUN     3
-#define MOUSE   4
-#define SCROLL  5
-#define SNIPE   6
+#define SYM     1
+#define NUM     2
+#define SYS     3
+#define NAV     4
+#define HYPER   5
+#define MOUSE   6
+#define SCROLL  7
+#define SNIPE   8
 
 #include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/mouse.h>
@@ -104,7 +106,7 @@
 &kp Q    &kp W  &kp E      &kp R        &kp T              &kp Y            &kp U        &kp I      &kp O    &kp P
 &kp A    &kp S  &kp D      &kp F        &kp G              &kp H            &kp J        &kp K      &kp L    &kp SEMI
 &lt 2 Z  &kp X  &kp C      &mt LGUI V   &kp B              &kp N            &mt LGUI M   &kp COMMA  &kp DOT  &mthold LCTRL FSLH
-&none &none &none &mo 5      &lt 4 SPACE  &mthold LSHFT ESC  &kp BSPC         &mo 1        &kp RALT
+&mo 6 &mo 7 &mo 8 &mo 5      &lt 4 SPACE  &mthold LSHFT ESC  &kp BSPC         &mo 1        &kp RALT
             >;
         };
 
