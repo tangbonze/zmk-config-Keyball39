@@ -30,6 +30,8 @@
 &msc {
 };
 
+&mmv { acceleration-exponent = <2>; };
+
 / {
     // custom shift using mod-morph 
 
