@@ -5,6 +5,11 @@
  */
 
 #include "keyball39.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
+#include <input/processors/xyz.dtsi>
+#include <input/processors/report_rate_limit.dtsi>
+#include <behaviors/rate_limit.dtsi>
 
 &kscan0 {
 	col-gpios
@@ -37,7 +42,6 @@
     };  
 };
 
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &spi1 {
     status = "okay";
@@ -47,27 +51,85 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
-    trackball: trackball@0 {
+	trackball_peripheral: trackball_peripheral@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";
+        compatible = "pixart,pmw3610-efogtech";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; 
-		cpi = <600>;
-        // swap-xy; /* optional */
-        // invert-x; /* optional */
-        // invert-y; /* optional */
+        irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Assuming same IRQ pin
+        
+        init-retry-interval = <20>;
+        init-retry-count = <100>;
+        cpi = <400>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>; 
-		force-awake;
+        y-input-code = <INPUT_REL_Y>;
+        
+        // Power management
+        force-awake;
     };
 };
 
 / {
-  trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
 
-  };
+
+    // Split input definition 
+    split_inputs {
+       #address-cells = <1>;
+       #size-cells = <0>;
+
+       trackball_peripheral_split: trackball_peripheral_split@0 {
+         compatible = "zmk,input-split";
+         reg = <0>;
+       };
+    };
+    
+    // We bind the real device to the split sender here
+};
+
+// Override the split node to attach the device and processors
+&trackball_peripheral_split {
+    device = <&trackball_peripheral>;
+    input-processors = <&zip_xyz>, <&zip_ble_report_rate_limit>;
+};
+
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 8)>;
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 8)>;
+            low-power-enable;
+        };
+    };
+};
+
+&i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
+    };
 };
