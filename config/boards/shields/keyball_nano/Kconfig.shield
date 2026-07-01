@@ -3,3 +3,6 @@ config SHIELD_KEYBALL39_LEFT
 
 config SHIELD_KEYBALL39_RIGHT
     def_bool $(shields_list_contains,keyball39_right)
+
+config SHIELD_KEYBALL39_DONGLE
+    def_bool $(shields_list_contains,keyball39_dongle)
