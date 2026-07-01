@@ -15,6 +15,9 @@
         events = <0>;
     };
 
+    nice_view_spi: dummy_spi {
+    };
+
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
