@@ -6,8 +6,8 @@ url: https://github.com/Yowkees/keyball
 requires: [pro_micro]
 features:
   - keys
+  - display
   - pointer
-  - underglow
 siblings:
   - keyball39_left
   - keyball39_right
